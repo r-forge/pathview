@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>Pathview: An R package for pathway based data integration and visualization</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2011-12-07 15:03:26 EST"/>
+<meta name="author" content="Dan Wang   "/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">Pathview: An R package for pathway based data integration and visualization</h1>
+
+
+<p> The pathview project is hosted at <a href="http://r-forge.r-project.org/projects/pathview/">http://r-forge.r-project.org/projects/pathview/</a> as part of <a href="https://r-forge.r-project.org">R-Forge</a></p>
+
+</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Overview </a></li>
+<li><a href="#sec-2">2 Installation </a></li>
+<li><a href="#sec-3">3 Tutorial </a></li>
+<li><a href="#sec-4">4 Citations </a></li>
+
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Overview </h2>
+<div class="outline-text-2" id="text-1">
+
+<p>The pathview R package is a tool set for pathway based data integration and visualization. It maps and renders user data on relevant pathway graphs. All users need is to supply their gene or compound data and specify the target pathway. Pathview automatically downloads the pathway graph data, parses the data file, maps user data to the pathway, and renders pathway graph with the mapped data. Although built as a stand-alone program, pathview may seamlessly integrate with pathway (and functional) analysis tools for a large-scale and fully automated analysis pipeline. 
+</p>
+<p>
+Pathview generates both native KEGG view (in PNG format) and Graphviz view (in PDF format) for pathways. KEGG view keeps all the meta-data on pathways, spacial and temporal information, tissue/cell types, inputs, outputs and connections. This is important for human reading and interpretation of pathway biology. Graphviz view provides better control of node and edge attributes, better view of pathway topology, better understanding of the pathway analysis statistics. Currently only KEGG pathways are implemented. Hopefully, pathways from Reactome, NCI and other databases will be supported in the future. Notice that KEGG requires subscription for FTP access since May 2011. However, Pathview downloads individual pathway graphs and data files through html access, which is freely available (for academic and non-commerical uses). Pathview uses KEGGgraph [Zhang et al, 2009] when parsing KEGG xml data files.
+</p>
+<p>
+Pathview provides strong support for data integration. It works with: 1) essentially all types of biological data mappable to pathways, 2) over 10 types of gene or protein IDs, and 20 types of compound or metabolite IDs, 3) pathways for over 2000 species as well as KEGG orthology, 4) varoius data attributes and formats, i.e. continuous/discrete data, matrices/vectors, single/multiple samples etc.
+</p>
+<p>
+Pathview is open source, fully automated and error-resistant. Therefore, it seamlessly integrates with pathway or gene set analysis tools. In the vignette (tutorial), we show an integrated analysis using pathview with anothr the Bioconductor gage package [Luo et al, 2009], available from the <a href="www.bioconductor.org/packages/release/bioc/html/gage.html">Bioconductor website</a>.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Installation </h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+Assume R has been correctly installed and accessible under current directory. Otherwise, please contact your system admin or follow the instructions on <a href="http://www.r-project.org/">R website</a>.
+</p>
+<p>
+Start R: from Linux/Unix command line, type in "R (Enter)"; for Mac or Windows GUI, double click the R application icon to enter R console.
+</p>
+<p>
+End R: type in "q() (Enter)" when you are finished using R, but not now.
+</p>
+<p>
+Two options to install pathview package are demonstrated here.
+</p>
+<p>
+Simple way: install with Bioconductor installation script biocLite directly (this included all dependencies automatically too):
+</p>
+<pre><code>
+&gt; source("http://bioconductor.org/biocLite.R")
+&gt; biocLite("pathview")
+</code></pre>
+
+<p>
+Or a bit more complexer: install through R-forge or manually, but require dependence packages to be installed using Bioconductor first:
+</p>
+<pre><code>
+&gt; source("http://bioconductor.org/biocLite.R")
+&gt; biocLite(c("Rgraphviz", "png", "KEGGgraph", "org.Hs.eg.db"))
+</code></pre>
+
+<p>
+Then install pathview through R-forge:
+</p>
+<pre><code>
+&gt; install.packages("pathview",repos="http://R-Forge.R-project.org")
+</code></pre>
+
+Or install manually: checkout or download pathview package (from R-forge or Bioconductor, make sure with proper version number and zip format) and save to /your/local/directory/.
+<pre><code>
+&gt; install.packages("/your/local/directory/pathview_1.0.0.tar.gz", 
+         repos = NULL, type = "source")
+</code></pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Tutorial </h2>
+<div class="outline-text-2" id="text-3">
+
+<p>The vignette covering the details of pathview is available <a href="./pathview.pdf">here</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Citations </h2>
+<div class="outline-text-2" id="text-4">
+
+<p>Luo W, Brouwer C. Pathview: an R  package for pathway based data integration and visualization. Submitted, 2013
+</p></div>
+
+</div>
+
+<div id="postamble">
+<p class="author"> Author: Weijun Luo
+<a href="mailto:weijun_luo@yahoo.com">&lt;weijun_luo at yahoo dot com&gt;</a>
+</p>
+<p class="date"> Date: 2013-3-18 EST</p>
+</div>
+</div>
+</body>
+</html>
