@@ -154,6 +154,13 @@ Or install manually: checkout or download pathview package (from R-forge or Bioc
          repos = NULL, type = "source")
 </code></pre>
 
+<p>
+Note that there might be problems when installing Rgraphviz or XML (KEGGgraph dependency) package. For example, on Windows systems,XML frequently needs to be installed manually. Its windows binary can be downloaded from CRAN (http://cran.r-project.org/web/packages/XML/index.html) and then:
+</p>
+<pre><code>
+&gt; install.packages("/your/local/directory/XML_3.95-0.2.zip", repos = NULL)
+</code></pre>
+
 </div>
 
 </div>
