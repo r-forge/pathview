@@ -81,9 +81,10 @@ lang="en" xml:lang="en">
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#sec-1">1 Overview </a></li>
-<li><a href="#sec-2">2 Installation </a></li>
-<li><a href="#sec-3">3 Tutorial </a></li>
-<li><a href="#sec-4">4 Citations </a></li>
+<li><a href="#sec-2">2 Examples </a></li>
+<li><a href="#sec-3">3 Installation </a></li>
+<li><a href="#sec-4">4 Tutorial </a></li>
+<li><a href="#sec-5">5 Citations </a></li>
 
 </ul>
 </div>
@@ -96,7 +97,7 @@ lang="en" xml:lang="en">
 <p>The pathview R package is a tool set for pathway based data integration and visualization. It maps and renders user data on relevant pathway graphs. All users need is to supply their gene or compound data and specify the target pathway. Pathview automatically downloads the pathway graph data, parses the data file, maps user data to the pathway, and renders pathway graph with the mapped data. Although built as a stand-alone program, pathview may seamlessly integrate with pathway (and functional) analysis tools for a large-scale and fully automated analysis pipeline. 
 </p>
 <p>
-Pathview generates both native KEGG view (in PNG format) and Graphviz view (in PDF format) for pathways. KEGG view keeps all the meta-data on pathways, spacial and temporal information, tissue/cell types, inputs, outputs and connections. This is important for human reading and interpretation of pathway biology. Graphviz view provides better control of node and edge attributes, better view of pathway topology, better understanding of the pathway analysis statistics. Currently only KEGG pathways are implemented. Hopefully, pathways from Reactome, NCI and other databases will be supported in the future. Notice that KEGG requires subscription for FTP access since May 2011. However, Pathview downloads individual pathway graphs and data files through html access, which is freely available (for academic and non-commerical uses). Pathview uses KEGGgraph [Zhang et al, 2009] when parsing KEGG xml data files.
+Pathview generates both native <a href="#fig-1">KEGG view</a> (in PNG format) and <a href="#fig-2">Graphviz view</a> (in PDF format) for pathways. KEGG view keeps all the meta-data on pathways, spacial and temporal information, tissue/cell types, inputs, outputs and connections. This is important for human reading and interpretation of pathway biology. Graphviz view provides better control of node and edge attributes, better view of pathway topology, better understanding of the pathway analysis statistics. Currently only KEGG pathways are implemented. Hopefully, pathways from Reactome, NCI and other databases will be supported in the future. Notice that KEGG requires subscription for FTP access since May 2011. However, Pathview downloads individual pathway graphs and data files through html access, which is freely available (for academic and non-commerical uses). Pathview uses KEGGgraph [Zhang et al, 2009] when parsing KEGG xml data files.
 </p>
 <p>
 Pathview provides strong support for data integration. It works with: 1) essentially all types of biological data mappable to pathways, 2) over 10 types of gene or protein IDs, and 20 types of compound or metabolite IDs, 3) pathways for over 2000 species as well as KEGG orthology, 4) varoius data attributes and formats, i.e. continuous/discrete data, matrices/vectors, single/multiple samples etc.
@@ -109,8 +110,58 @@ Pathview is open source, fully automated and error-resistant. Therefore, it seam
 </div>
 
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Installation </h2>
+<h2 id="sec-2"><span class="section-number-2">2</span> Examples </h2>
 <div class="outline-text-2" id="text-2">
+
+<p>
+In this section, we present a few examples on visualizing and integrating user data onto pathways using pathview package</a>. We just show you the output graphs here, and details are described in the <a href="./pathview.pdf">vignette</a>. This gives you an brief idea on how pathview may fit in your research and data analysis. Pathview's function is much more than shown here, and please check the <a href="#sec-1">Overview section</a> and the <a href="./pathview.pdf">vignette</a> for details.
+</p>
+
+<table class="image">
+<tr>
+<td>
+<img src="images/hsa04110.gse16873.png" height="400px" style="padding:20px 20px 20px 20px;background-color: #AC714E" id="fig-1"/>
+</td>
+<td>
+<embed src="images/hsa04110.gse16873.pdf.png" height="400px" style="padding:20px 20px 20px 20px;background-color: #AC714E" id="fig-2"/>
+</td>
+</tr>
+<tr>
+<td>
+<p align="center" style="font-family:arial;font-size:16px;">Figure 1. Example KEGG view on gene data (hsa04110 Cell cycle)</p>
+</td>
+<td>
+<p align="center" style="font-family:arial;font-size:16px;">Figure 2. Example Graphviz view on gene data (hsa04110 Cell cycle)</p>
+</td>
+</tr>
+</table>
+<table class="image">
+<tr>
+<td>
+<img src="images/hsa00640.gse16873.cpd.png" height="350px" style="padding:20px 10px 20px 10px;background-color: #AC714E" id="fig-3"/>
+</td>
+<td>
+<embed src="images/hsa00640.gse16873.cpd.pdf.png" height="350px" style="padding:20px 10px 20px 10px;background-color: #AC714E" id="fig-4"/>
+</td>
+</tr>
+<tr>
+<td>
+<p align="center" style="font-family:arial;font-size:16px;">Figure 3. Example KEGG view with gene and compound data integrated (hsa00640 Propanoate metabolism)</p>
+</td>
+<td>
+<p align="center" style="font-family:arial;font-size:16px;">Figure 4. Example Graphviz view with gene and compound data integrated (hsa00640 Propanoate metabolism)</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Installation </h2>
+<div class="outline-text-2" id="text-3">
 
 
 <p>
@@ -165,19 +216,19 @@ Note that there might be problems when installing Rgraphviz or XML (KEGGgraph de
 
 </div>
 
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Tutorial </h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Turtorial </h2>
+<div class="outline-text-2" id="text-4">
 
-<p>The vignette covering the details of pathview is available <a href="./pathview.pdf">here</a>
+<p>The vignette covering the details of pathview is available <a href="./pathview.pdf">here</a>.
 </p>
 </div>
 
 </div>
 
-<div id="outline-container-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> Citations </h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Citations </h2>
+<div class="outline-text-2" id="text-5">
 
 <p>Luo W, Brouwer C. Pathview: an R  package for pathway based data integration and visualization. Submitted, 2013
 </p></div>
