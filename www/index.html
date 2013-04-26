@@ -165,7 +165,7 @@ In this section, we present a few examples on visualizing and integrating user d
 
 
 <p>
-Assume R has been correctly installed and accessible under current directory. Otherwise, please contact your system admin or follow the instructions on <a href="http://www.r-project.org/">R website</a>.
+Assume R has been correctly installed and accessible under current directory. Otherwise, please contact your system admin or follow the instructions on <a href="http://www.r-project.org/">R website</a> and <a href="http://www.bioconductor.org/install/">Bioconductor website</a>. Here I would strongly recommend users to install or upgrade to the latest verison of R (3.0)/Bioconductor (2.12) for simpler installation and better use of Pathview. You may need to update your biocLite function too if you upgrade R/Biocondutor under Windows.
 </p>
 <p>
 Start R: from Linux/Unix command line, type in "R (Enter)"; for Mac or Windows GUI, double click the R application icon to enter R console.
@@ -206,7 +206,7 @@ Or install manually: checkout or download pathview package (from R-forge or Bioc
 </code></pre>
 
 <p>
-Note that there might be problems when installing Rgraphviz or XML (KEGGgraph dependency) package. For example, on Windows systems,XML frequently needs to be installed manually. Its windows binary can be downloaded from CRAN (http://cran.r-project.org/web/packages/XML/index.html) and then:
+Note that there might be problems when installing Rgraphviz or XML (KEGGgraph dependency) package with outdated R/Biocondutor. Rgraphviz installation is a bit complicate with R 2.5 (Biocondutor 2.10) or earlier versions. Please check this  <a href="./Rgraphviz.README">Readme file</a> on Rgraphviz. On Windows systems,XML frequently needs to be installed manually. Its windows binary can be downloaded from CRAN (http://cran.r-project.org/web/packages/XML/index.html) and then:
 </p>
 <pre><code>
 &gt; install.packages("/your/local/directory/XML_3.95-0.2.zip", repos = NULL)
@@ -217,7 +217,7 @@ Note that there might be problems when installing Rgraphviz or XML (KEGGgraph de
 </div>
 
 <div id="outline-container-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> Turtorial </h2>
+<h2 id="sec-4"><span class="section-number-2">4</span> Tutorial </h2>
 <div class="outline-text-2" id="text-4">
 
 <p>The vignette covering the details of pathview is available <a href="./pathview.pdf">here</a>.
@@ -230,7 +230,7 @@ Note that there might be problems when installing Rgraphviz or XML (KEGGgraph de
 <h2 id="sec-5"><span class="section-number-2">5</span> Citations </h2>
 <div class="outline-text-2" id="text-5">
 
-<p>Luo W, Brouwer C. Pathview: an R  package for pathway based data integration and visualization. Submitted, 2013
+<p>Luo W, Brouwer C. Pathview: an R/Biocondutor package for pathway based data integration and visualization. Submitted, 2013
 </p></div>
 
 </div>
@@ -239,7 +239,7 @@ Note that there might be problems when installing Rgraphviz or XML (KEGGgraph de
 <p class="author"> Author: Weijun Luo
 <a href="mailto:luo_weijun@yahoo.com">&lt;luo_weijun at yahoo dot com&gt;</a>
 </p>
-<p class="date"> Date: 2013-4-2 EST</p>
+<p class="date"> Date: 2013-4-26 EST</p>
 </div>
 </div>
 </body>
