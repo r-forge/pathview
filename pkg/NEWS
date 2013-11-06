@@ -1,3 +1,10 @@
+VERSION 1.2.1
+-------------
+
+  o Fixed bug in "missing red disease gene node labels" in diease
+    pathways. To avoid interfering with node coloring, set all disease
+    gene labels to black instead.
+
 VERSION 1.1.7
 -------------
 
