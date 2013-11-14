@@ -1,3 +1,9 @@
+VERSION 1.2.2
+-------------
+
+  o Fixed bug in mol.sum function, what generates "incorrect number of
+    dimension" or NA's when sum.method="median" etc.
+
 VERSION 1.2.1
 -------------
 
