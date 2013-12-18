@@ -1,7 +1,13 @@
+VERSION 1.2.3
+-------------
+
+  o Fixed bug in node.map function, which produces 0 values when all
+    multiple genes in a node are NA's.
+
 VERSION 1.2.2
 -------------
 
-  o Fixed bug in mol.sum function, what generates "incorrect number of
+  o Fixed bug in mol.sum function, which generates "incorrect number of
     dimension" or NA's when sum.method="median" etc.
 
 VERSION 1.2.1
